@@ -1,0 +1,15 @@
+#SNORT-RULES
+
+#SNORT RULES-MALWARE
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable successful phishing attack."; flow:established, to_server; content:"GET"; http_method; content:"/idkfJu.php?"; http_uri; classtype:trojan-activity; sid:10000001; rev:1;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable Infection - Boleto Malware. 1st Indicator."; flow:established, to_server; content:"GET"; http_method; content:"/bibi/"; http_uri; pcre:"/(\.txt|\.tiff|\.zip|\.dll|\.exe)/U"; classtype:trojan-activity; sid:10000002; rev:1;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable Infection - Boleto Malware. 2nd Indicator."; flow:established, to_server; content:"GET"; http_method; content:"/bsb/infects/index.php?"; http_uri; classtype:trojan-activity; sid:10000003; rev:1;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable Infection - Boleto Malware. 3rd Indicator."; flow:established, to_server; content:"GET"; http_method; content:"/bsb/debugnosso/index.php?"; http_uri; classtype:trojan-activity; sid:10000004; rev:1;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable Infection - Boleto Malware. 4th Indicator."; flow:established, to_server; content:"POST"; http_method; content:"/mestre/admin/x.php"; http_uri; classtype:trojan-activity; sid:10000005; rev:1;)
+
+
+
