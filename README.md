@@ -1,3 +1,3 @@
 # Snort Rules
 
-detection signature rules for incident response
+detection signature rules for EDR.
