@@ -1,3 +1,3 @@
-# Snort Rules
+# Detection Rules
 
 detection signature rules for EDR.
